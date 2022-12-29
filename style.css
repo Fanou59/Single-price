@@ -1,0 +1,313 @@
+/* ******************* CSS RESET ************************* */
+
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font: inherit;
+    vertical-align: baseline;
+}
+
+/* HTML5 display-role reset for older browsers */
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+    display: block;
+}
+
+body {
+    line-height: 1;
+}
+
+ol,
+ul {
+    list-style: none;
+}
+
+blockquote,
+q {
+    quotes: none;
+}
+
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+    content: '';
+    content: none;
+}
+
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+/* *************************** CSS STYLE *************************** */
+/* ************* GENERAL ************ */
+
+:root {
+    font-family: "Karla";
+    font-size: 16px;
+    --Cyan: hsl(179, 62%, 43%);
+    --Bright-Yellow: hsl(71, 73%, 54%);
+    --Light-Gray: hsl(204, 43%, 93%);
+    --Grayish-Blue: hsl(218, 22%, 67%);
+
+}
+
+html {
+    display: flex;
+    min-height: 100vh;
+    justify-content: center;
+    align-items: center;
+
+}
+
+body {
+    max-width: 635px;
+    background-color: var(--Light-Gray);
+    margin: 32px;
+
+}
+
+main {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas:
+        "header header"
+        "subscription why";
+    background-color: var(--Cyan);
+    box-shadow: 0 15px 30px rgba(0, 81, 171, 0.14);
+    border-radius: 0 0 8px 8px;
+}
+
+h2,
+h3 {
+    font-size: 1.125rem;
+    font-weight: 700;
+    letter-spacing: -0.22px;
+}
+
+/* ************* Header *************** */
+
+header {
+    grid-area: header;
+    background-color: white;
+    padding: 40px;
+    border-radius: 8px 8px 0 0;
+
+}
+
+h1 {
+    color: var(--Cyan);
+    font-size: 1.5rem;
+    letter-spacing: -0.3px;
+    font-weight: 700;
+    margin-bottom: 24px;
+}
+
+h2 {
+    color: var(--Bright-Yellow);
+    margin-bottom: 11px;
+}
+
+header>p {
+    line-height: 26px;
+    letter-spacing: -0.2px;
+    color: var(--Grayish-Blue);
+}
+
+/* ************* Subscription ************* */
+
+.subscription {
+    grid-area: subscription;
+    color: white;
+    padding: 40px;
+
+}
+
+h3 {
+    margin-bottom: 18px;
+
+}
+
+.price {
+    display: flex;
+    align-items: center;
+    font-weight: 700;
+    font-size: 2rem;
+    margin-bottom: 4px;
+
+}
+
+.price>span {
+    line-height: 26px;
+    font-size: 1rem;
+    letter-spacing: -0.2px;
+    font-weight: 400;
+    opacity: 0.5;
+    margin-left: 11px;
+}
+
+.access {
+    margin-bottom: 26px;
+}
+
+button {
+    width: 100%;
+    background-color: var(--Bright-Yellow);
+    color: white;
+    padding: 15px;
+    font-family: "Karla";
+    font-size: 1rem;
+    letter-spacing: -0.2px;
+    font-weight: 700;
+    border: none;
+    border-radius: 5%;
+
+}
+
+/* *************** Why ******************** */
+.why {
+    position: relative;
+    grid-area: why;
+    color: white;
+    padding: 40px;
+}
+
+.overlay {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background-color: #FFF;
+    opacity: 0.15;
+
+}
+
+ul {
+    font-size: 0.875rem;
+    letter-spacing: -0.17px;
+    line-height: 20px;
+    opacity: 0.75;
+
+}
+
+@media only screen and (max-width:550px) {
+    main {
+        display: flex;
+        flex-direction: column;
+    }
+
+    header,
+    .subscription,
+    .why {
+        padding: 24px;
+    }
+
+    h1 {
+        font-size: 1.25rem;
+        letter-spacing: -0.25px;
+    }
+
+    h2 {
+        font-size: 0.93rem;
+        line-height: 20px;
+        letter-spacing: 0.19px;
+    }
+
+    header>p {
+        font-style: 0.875rem;
+        letter-spacing: -0.17px;
+    }
+}
